@@ -1,5 +1,7 @@
 # ffmpeg-seek-bug
 
+When converting an audio file in chunks using `-ss` and `-t`, ffmpeg adds few milliseconds of silence at the end causing a gap when concatenating the chunks back.
+
 ```bash
 # Convert the first 5 seconds of audio
 ffmpeg -y -ss 0 -t 5 -i input.mp3 -codec:a flac chunk-1.flac
